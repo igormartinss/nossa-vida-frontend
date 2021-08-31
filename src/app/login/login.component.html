@@ -1,0 +1,29 @@
+<div class="login">
+    <main class="login-content">
+        <div class="login-logo">
+            <img src="../../assets/Logo.png" alt="logo nossa-vida">
+        </div>
+        <div class="login-error" *ngFor="let errorMessage of errorMessages">
+            {{ errorMessage }}
+        </div>
+        <div class="login-form">
+            <form #loginForm="ngForm" (submit)="onSubmit()" action="">
+                <div class="login-form-label">
+                    usuário
+                </div>
+                <div class="login-form-fields">                
+                    <input type="text" name="username" id="username" [(ngModel)]="username">
+                </div>
+                <div class="login-form-label">
+                    senha
+                </div>                
+                <div class="login-form-fields">                
+                    <input type="password" name="password" id="password" [(ngModel)]="password">
+                </div>
+                <div class="login-form-button">
+                    <button type="submit">login</button>
+                </div>
+            </form>
+        </div>
+    </main>
+</div>

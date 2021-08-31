@@ -1,0 +1,26 @@
+<div class="details">
+    <div class="detadetails-title">
+        <div class="details-title-header">
+            <h1>{{ period?.title }}</h1>
+            <img src="assets/edit.png" alt="edit" routerLink="/period/form/{{ period?.id }}">
+        </div>
+        <div class="details-date">{{ period?.startDate | date: 'dd/MM/yyyy' }} a {{ period?.startDate | date:
+            'dd/MM/yyyy' }}</div>
+    </div>
+    <div class="details-description">
+        {{ period?.description }}
+    </div>
+    <div class="details-images">
+        <ng-container *ngFor="let image of images">
+            <div class="details-images-image">
+                <img src="data:image/png;base64,{{ image }}" alt="" width="250" height="350px">
+            </div>
+        </ng-container>
+        <div class="details-images-input">
+            <label for="image-input">
+                <img src="assets/round-add-button.png" alt="" width="50px" height="50px" />
+            </label>
+            <input id="image-input" type="file" name="photo" (change)="uploadPhoto($event, period)" />
+        </div>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+<div class="cards" *ngIf="periods">
+    <ng-container *ngFor="let period of periods">
+        <div class="cards-item" [routerLink]="['/period/details']" [queryParams]="{id: this.period.id }">
+            <div class="cards-item-content" [style.background-image]="'url(' + setImage(this.period.image)  + ')'">
+                <p>{{ period.title}}</p>
+            </div>
+        </div>
+    </ng-container >
+</div>

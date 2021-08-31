@@ -1,0 +1,42 @@
+<div class="period-form">
+    <h1>novo período</h1>
+    <form class="period-form-fields" #clienteForm="ngForm" [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="period-form-fields-row">
+            <div class="periof-form-fields-row-label">
+                <label for="">título</label>
+            </div>
+            <input class="period-form-input-title" type="text" name="title" id="title" formControlName="title">
+        </div>
+        <div class="period-form-fields-row-dates">
+            <div class="period-form-fields-row-dates-fields">
+                <div class="period-form-fields-row-label">
+                    <label for="startDate">data início</label>
+                </div>
+                <input class="period-form-input-date" type="date" name="startDate" id="startDate"
+                    formControlName="startDate">
+            </div>
+            <div class="period-form-fields-row-dates-fields">
+                <div class="period-form-fields-row-label">
+                    <label for="">data fim</label>
+                </div>
+                <input class="period-form-input-date" type="date" name="endDate" id="endDate" formControlName="endDate">
+            </div>
+        </div>
+        <div class="period-form-fields-row">
+            <div class="period-form-fields-row-label">
+                <label for="">descrição</label>
+            </div>
+            <textarea class="period-form-input-description" rows="5" type="text" name="description" id="description"
+                formControlName="description"></textarea>
+        </div>
+        <div class="period-form-fields-row">
+            <span class="period-form-fields-row-buttons">
+                <button class="period-form-fields-row-buttons-save" type="submit">salvar</button>
+                <button class="period-form-fields-row-buttons-cancel" routerLink="">cancelar</button>
+            </span>
+            <span class="period-form-fields-row-buttons" *ngIf="period.id">
+                <button class="period-form-fields-row-buttons-delete" (click)="delete(period.id)">deletar</button>
+            </span>
+        </div>
+    </form>
+</div>
